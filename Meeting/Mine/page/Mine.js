@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
-import { View,Image } from 'react-native';
-import MineHeader from "./MineHeader";
-=======
->>>>>>> e05380c9cf6718db2ddc3c52315b304c2d206e45
+import { StyleSheet,View,FlatList,SectionList,Text,Image,ImageBackground } from 'react-native';
 
 class Mine extends PureComponent {
     
@@ -18,12 +14,29 @@ class Mine extends PureComponent {
     render() {
         
         return (
-<<<<<<< HEAD
-            <View>
-                <MineHeader></MineHeader>
+        <View style={styles.container}>
+            <View style={styles.headerView}>
+                <Image style={styles.headerImg}
+                source = {require('../page/touxiang.png')}
+                />
+
             </View>
-=======
->>>>>>> e05380c9cf6718db2ddc3c52315b304c2d206e45
+            <View>
+            <SectionList
+                renderItem={({item,index})=>this._renderItem(item,index)}
+                renderSectionHeader = {({section:{title}}) => (
+                    <Text style ={{fontWeight:"bold",height:15}}> </Text>
+                )}
+                sections={[
+                    {title:"",data:["关于我们"]},
+                    {title:"",data:["系统设置"]}
+                ]}
+                ItemSeparatorComponent={() => <View style={{height:1}}><Text></Text></View>}
+                keyExtractor={(item,index)=> item+index}
+            />
+            </View>
+        </View>
+        
         );
     }
 }
