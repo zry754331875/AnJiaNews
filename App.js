@@ -18,6 +18,8 @@ import rootReducers from "./Meeting/ReduX_src/reducers/index";
 import thunk from "redux-thunk";
 import createSagaMiddleware from 'redux-saga';
 import Mine from "./Meeting/Mine/container";
+import Work from "./Meeting/Work/Container";
+
 const sagaMiddleware = createSagaMiddleware()
 
 const Tab = TabNavigator({
@@ -25,6 +27,12 @@ const Tab = TabNavigator({
     screen:MainMeeting,
     navigationOptions:{
       title:'首页'
+    }
+  },
+  Work:{
+    screen:Work,
+    navigationOptions:{
+      title:'工作'
     }
   },
   Mine:{
