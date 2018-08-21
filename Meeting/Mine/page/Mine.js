@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View,Image } from 'react-native';
+import MineHeader from "./MineHeader";
 
 class Mine extends PureComponent {
      
     render() {
         return (
-            <View></View>
+            <View>
+                <MineHeader></MineHeader>
+            </View>
         );
     }
 }

@@ -88350,6 +88350,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _reactNative = _require(_dependencyMap[3], "react-native");
 
+    var _MineHeader = _require(_dependencyMap[4], "./MineHeader");
+
+    var _MineHeader2 = _interopRequireDefault(_MineHeader);
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -88389,12 +88393,21 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         _createClass(Mine, [{
             key: "render",
             value: function render() {
-                return _react3.default.createElement(_reactNative.View, {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 9
-                    }
-                });
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 10
+                        }
+                    },
+                    _react3.default.createElement(_MineHeader2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 11
+                        }
+                    })
+                );
             }
         }]);
 
@@ -88402,7 +88415,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }(_react2.PureComponent));
 
     exports.default = Mine;
-},705,[118,130,294,12],"Meeting/Mine/page/Mine.js");
+},705,[118,130,294,12,728],"Meeting/Mine/page/Mine.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -92122,6 +92135,100 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     return Container;
   }
 },727,[118,130,500,525],"node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/zry/Documents/AnJiaNews/Meeting/Mine/page/MineHeader.js";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        MineHeader: {
+            displayName: "MineHeader"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/zry/Documents/AnJiaNews/Meeting/Mine/page/MineHeader.js",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var MineHeader = _wrapComponent("MineHeader")(function (_PureComponent) {
+        _inherits(MineHeader, _PureComponent);
+
+        function MineHeader() {
+            _classCallCheck(this, MineHeader);
+
+            return _possibleConstructorReturn(this, (MineHeader.__proto__ || Object.getPrototypeOf(MineHeader)).apply(this, arguments));
+        }
+
+        _createClass(MineHeader, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 8
+                        }
+                    },
+                    _react3.default.createElement(_reactNative.Image, {
+                        source: _require(_dependencyMap[3], '../../place.png'),
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 9
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return MineHeader;
+    }(_react2.PureComponent));
+
+    exports.default = MineHeader;
+},728,[118,130,12,729],"Meeting/Mine/page/MineHeader.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+   module.exports = _require(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+      "__packager_asset": true,
+      "httpServerLocation": "/assets/Meeting",
+      "width": 496,
+      "height": 485,
+      "scales": [1],
+      "hash": "58f507342ddf901be4cff050c46121e7",
+      "name": "place",
+      "type": "png"
+   });
+},729,[326],"Meeting/place.png");
 require(52);
 require(11);
 //# sourceMappingURL=index.map

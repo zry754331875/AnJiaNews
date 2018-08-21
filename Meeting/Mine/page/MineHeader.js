@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
-import { View } from 'react-native';
+import { View,Image } from 'react-native';
 
 class MineHeader extends PureComponent {
     
     render() {
         return (
-            <View></View>
+            <View>
+                <Image source={require('../../place.png')}></Image>
+            </View>
         );
     }
 }
