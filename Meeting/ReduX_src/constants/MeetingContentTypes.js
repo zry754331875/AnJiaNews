@@ -1,0 +1,1 @@
+export const TEXTINPUT_CHANGE = 'TEXTINPUT_CHANGE'
