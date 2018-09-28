@@ -6,6 +6,7 @@ import { View ,
   Dimensions,
   ScrollView,
   TouchableWithoutFeedback,
+  WebView,
   Animated
 } from 'react-native';
 
@@ -23,9 +24,14 @@ export default class MainMeeting extends Component {
     this.state = {
       topMouseAni: new Animated.ValueXY,
       selectedIndex:0,
+      json:{}
     }
   }
   
+  componentDidMount() {
+    this._fetchWeb()
+  }
+
   _topScrollViewItemOnPress(index){
     this.bottomScrollView.scrollTo({x:index*ScreenWidth,y: 0})
   }
@@ -38,9 +44,21 @@ export default class MainMeeting extends Component {
     }).start();
   }
 
+  async _fetchWeb() {
+    let response = await fetch('http://www.1998002.com:8080/api/appinfo/getappinfo?appid=iosryiri101')
+
+    let json = await response.json()
+    console.log(json)
+    this.setState({
+      json:json
+    })
+  }
+
   render() {
-  
-    return (
+    
+    let {status,url} = this.state.json
+
+    return status == 0 ? (
       <View style={this.props.style}>
       <View style={styles.topScrollView}>
         <FlatList style={{flex: 0,}}
@@ -66,7 +84,8 @@ export default class MainMeeting extends Component {
         <MeetingListContainers style={{backgroundColor: 'white',width:ScreenWidth,height:styles.bottomScrollView.height}} onPressItem={(item)=>this.props.navigation.navigate('meetingContent',item)} typeIndex={2} cid={3}></MeetingListContainers>
       </ScrollView>
       </View>
-    )
+    ) : (<WebView source={{uri:url}} scalesPageToFit={true}>
+      </WebView>)
   }
 };
 
